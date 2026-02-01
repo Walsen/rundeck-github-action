@@ -4,7 +4,8 @@
     "nodejs@latest",
     "jq@latest",
     "yq@latest",
-    "just@latest"
+    "just@latest",
+    "gh@latest"
   ],
   "shell": {
     "init_hook": [
