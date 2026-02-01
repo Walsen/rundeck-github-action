@@ -37,7 +37,7 @@ The `dist/` folder must be committed — GitHub Actions runs the compiled code d
 
 ```yaml
 - name: Run Rundeck Job
-  uses: your-org/rundeck-action@v1
+  uses: Walsen/rundeck-github-action@v1
   with:
     rundeck_url: ${{ secrets.RUNDECK_URL }}
     rundeck_token: ${{ secrets.RUNDECK_TOKEN }}
@@ -50,7 +50,7 @@ The `dist/` folder must be committed — GitHub Actions runs the compiled code d
 ```yaml
 - name: Deploy Application
   id: deploy
-  uses: your-org/rundeck-action@v1
+  uses: Walsen/rundeck-github-action@v1
   with:
     rundeck_url: ${{ secrets.RUNDECK_URL }}
     rundeck_token: ${{ secrets.RUNDECK_TOKEN }}
@@ -71,7 +71,7 @@ The `dist/` folder must be committed — GitHub Actions runs the compiled code d
 
 ```yaml
 - name: List Jobs
-  uses: your-org/rundeck-action@v1
+  uses: Walsen/rundeck-github-action@v1
   with:
     rundeck_url: ${{ secrets.RUNDECK_URL }}
     rundeck_token: ${{ secrets.RUNDECK_TOKEN }}
@@ -83,7 +83,7 @@ The `dist/` folder must be committed — GitHub Actions runs the compiled code d
 
 ```yaml
 - name: Check Execution
-  uses: your-org/rundeck-action@v1
+  uses: Walsen/rundeck-github-action@v1
   with:
     rundeck_url: ${{ secrets.RUNDECK_URL }}
     rundeck_token: ${{ secrets.RUNDECK_TOKEN }}
@@ -147,7 +147,7 @@ jobs:
 
       - name: Run deployment job
         id: deploy
-        uses: your-org/rundeck-action@v1
+        uses: Walsen/rundeck-github-action@v1
         with:
           rundeck_url: ${{ secrets.RUNDECK_URL }}
           rundeck_token: ${{ secrets.RUNDECK_TOKEN }}
