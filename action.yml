@@ -1,0 +1,61 @@
+name: 'Rundeck API Action'
+description: 'Interact with Rundeck features through its REST API'
+author: 'Your Organization'
+
+branding:
+  icon: 'play-circle'
+  color: 'blue'
+
+inputs:
+  rundeck_url:
+    description: 'Rundeck server URL (e.g., https://rundeck.example.com)'
+    required: true
+  rundeck_token:
+    description: 'Rundeck API token for authentication'
+    required: true
+  api_version:
+    description: 'Rundeck API version to use'
+    required: false
+    default: '41'
+  action:
+    description: 'Action to perform: run_job, get_job_info, list_jobs, get_execution, list_executions, get_project_info, list_projects, abort_execution'
+    required: true
+  project:
+    description: 'Project name (required for project-specific actions)'
+    required: false
+  job_id:
+    description: 'Job ID (required for job-specific actions)'
+    required: false
+  execution_id:
+    description: 'Execution ID (required for execution-specific actions)'
+    required: false
+  job_options:
+    description: 'Job options as JSON object (for run_job action)'
+    required: false
+    default: '{}'
+  wait_for_completion:
+    description: 'Wait for job execution to complete (for run_job action)'
+    required: false
+    default: 'false'
+  timeout:
+    description: 'Timeout in seconds when waiting for job completion'
+    required: false
+    default: '300'
+  poll_interval:
+    description: 'Poll interval in seconds when waiting for job completion'
+    required: false
+    default: '10'
+
+outputs:
+  response:
+    description: 'Full JSON response from Rundeck API'
+  execution_id:
+    description: 'Execution ID (for run_job action)'
+  execution_status:
+    description: 'Execution status (succeeded, failed, aborted, running)'
+  execution_url:
+    description: 'URL to view the execution in Rundeck'
+
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
